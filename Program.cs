@@ -129,15 +129,191 @@ using static System.Console;
 // }
 
 // task 29_DZ
-Clear();
+// Clear();
 
-WriteLine($"[{String.Join(",",GetArray(8))}]");
-int[] GetArray(int size)
+// WriteLine($"[{String.Join(",", GetArray(8))}]");
+// int[] GetArray(int size)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(20);
+//     }
+//     return result;
+// }
+
+// task 31
+// Clear();
+// int[] array = GetArray(12, -9, 9);
+// WriteLine(String.Join("," , array));
+// int positiveSum = 0;
+// int negativeSum = 0;
+// foreach (int item in array)
+// {
+//     if (item > 0)
+//     {
+//         positiveSum += item;
+//     }
+//     else
+//     {
+//         negativeSum += item;
+//     }
+// }
+// WriteLine ($"Сумма положительных элементов равно {positiveSum}");
+// WriteLine ($"Сумма отрицательных элементов равно {negativeSum}");
+
+
+// int[] GetArray(int size, int min, int max)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(min, max + 1);
+//     }
+//     return result;
+// }
+
+// task 32
+// Clear();
+// int[] array = GetArray(8, -10, 10);
+// WriteLine(String.Join(" " , array));
+// InverseArrey(array);
+// WriteLine(String.Join(" " , array));
+
+// первый способ (мой)
+// for (int i = 0; i < array.Length; i++)
+// {
+//    array[i]=-1*array[i]; 
+// }
+// WriteLine(String.Join("," , array));
+
+// int[] GetArray(int size, int min, int max)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(min, max + 1);
+//     }
+//     return result;
+// }
+
+// // второй способ через метод
+// void InverseArrey(int[] inArrey)
+// {
+//     for (int i = 0; i < inArrey.Length; i++)
+//     {
+//         inArrey[i]*=-1;
+//     }
+// }
+
+// task 33
+// Clear();
+// WriteLine("Введите через пробел массив: ");
+// int [] array = GetArrayFromString(ReadLine());
+// Write("Введите элемент: ");
+// int element = int.Parse(ReadLine());
+// if(FindeElement(array,element))
+// {
+//    WriteLine("да"); 
+// }
+// else
+// {
+//     WriteLine("нет");    
+// }
+
+
+// int[] GetArrayFromString(string stringArray)
+// {
+//     string[] numS = stringArray.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+//     int[] result = new int[numS.Length];
+//     for (int i = 0; i < result.Length; i++)
+//     {
+//         result[i]= int.Parse(numS[i]);
+//     }
+//     return result;
+// }
+
+// bool FindeElement(int[] inArray, int el)
+// {
+//     foreach(int item in inArray)
+//     {
+//         if(item == el) return true;
+//     }
+//     return false;
+// }
+
+// task 35
+// Clear();
+// int[] array = GetArray(10, 0, 1000);
+// WriteLine(String.Join(",", array));
+// Write("Введите число а - начало диапазона: ");
+// int a = int.Parse(ReadLine());
+// Write("Введите число b - начало диапазона: ");
+// int b = int.Parse(ReadLine());
+// int count = CountArrey(array, a, b);
+// WriteLine($"{ count}");
+
+
+
+
+// int[] GetArray(int size, int min, int max)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(min, max + 1);
+//     }
+//     return result;
+// }
+
+// int CountArrey(int[] inArray, int a, int b)
+// {
+//     int count = 0;
+//     foreach (int item in inArray)
+//     {
+
+//         if (item >= a && item <= b)
+//         {
+//             count = count + 1;
+//         }
+
+//     }
+//     return count;
+// }
+
+// task 37
+Clear();
+int[] array = GetArray(4, 0, 10);
+WriteLine(String.Join(",", array));
+int[] res2 = GetArrayRes(array);
+
+WriteLine(String.Join(" ", res2));
+
+
+int[] GetArray(int size, int min, int max)
 {
     int[] result = new int[size];
     for (int i = 0; i < size; i++)
     {
-        result[i] = new Random().Next(20);
+        result[i] = new Random().Next(min, max + 1);
     }
     return result;
+}
+
+int[] GetArrayRes(int[] inArray)
+{
+
+    int k = inArray.Length / 2;
+
+    if (inArray.Length % 2 == 1) k++;
+    int[] result1 = new int[k];
+
+    for (int j = 0; j < inArray.Length / 2; j++)
+    {
+        result1[j] = inArray[j] * inArray[inArray.Length - j - 1];
+
+    }
+    if (inArray.Length % 2 == 1) result1[k - 1] = inArray[inArray.Length / 2];
+
+    return result1;
 }
