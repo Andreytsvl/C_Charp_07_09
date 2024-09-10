@@ -282,12 +282,119 @@ using static System.Console;
 // }
 
 // task 37
-Clear();
-int[] array = GetArray(4, 0, 10);
-WriteLine(String.Join(",", array));
-int[] res2 = GetArrayRes(array);
+// Clear();
+// int[] array = GetArray(4, 0, 10);
+// WriteLine(String.Join(",", array));
+// int[] res2 = GetArrayRes(array);
 
-WriteLine(String.Join(" ", res2));
+// WriteLine(String.Join(" ", res2));
+
+
+// int[] GetArray(int size, int min, int max)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(min, max + 1);
+//     }
+//     return result;
+// }
+
+// int[] GetArrayRes(int[] inArray)
+// {
+
+//     int k = inArray.Length / 2;
+
+//     if (inArray.Length % 2 == 1) k++;
+//     int[] result1 = new int[k];
+
+//     for (int j = 0; j < inArray.Length / 2; j++)
+//     {
+//         result1[j] = inArray[j] * inArray[inArray.Length - j - 1];
+
+//     }
+//     if (inArray.Length % 2 == 1) result1[k - 1] = inArray[inArray.Length / 2];
+
+//     return result1;
+// }
+
+// task 33_DZ Массив, заполненный случайными положит. трехзначными числами
+// Напишите программу, кот. покажет число четных чисел
+// Clear();
+// int[] array = GetArray(6, 100, 1000);
+// WriteLine(String.Join(",", array));
+// int res = GetHonest(array);
+
+// WriteLine($"Количество чётных элементов {res}");
+
+
+// int[] GetArray(int size, int min, int max)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(min, max);
+//     }
+//     return result;
+// }
+
+// int GetHonest(int[] inArray)
+// {
+//     int count = 0;
+//     foreach (int item in inArray)
+//     {
+
+//         if (item % 2 == 0)
+//         {
+//             count = count + 1;
+//         }
+
+//     }
+//     return count;
+// }
+
+// task 36_DZ Одномерный случайный массив. Найти сумму эл-тов,
+// стоящих на нечетных позициях
+
+// Clear();
+// int[] array = GetArray(10, -99, 100);
+// WriteLine(String.Join(",", array));
+// int res = SumElementNotEvenPoz(array);
+
+// WriteLine($"Сумма элементов на нечётных позициях {res}");
+
+
+// int[] GetArray(int size, int min, int max)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = new Random().Next(min, max);
+//     }
+//     return result;
+// }
+
+// int SumElementNotEvenPoz(int[] inArray)
+// {
+//     int sum = 0;
+//     for (int i = 1; i < inArray.Length; i++)
+//     {
+//         if (i % 2 == 1)
+//         {
+//             sum = sum + inArray[i];
+//         }
+//     }
+//     return sum;
+// }
+
+// task 38_DZ Найти разницу между максимальным
+// и минимальным элементом массива.
+Clear();
+int[] array = GetArray(10, 0, 20);
+WriteLine(String.Join(",", array));
+int res = DiffMaxMin(array);
+
+WriteLine($"Разница между макс и мин {res}");
 
 
 int[] GetArray(int size, int min, int max)
@@ -295,25 +402,26 @@ int[] GetArray(int size, int min, int max)
     int[] result = new int[size];
     for (int i = 0; i < size; i++)
     {
-        result[i] = new Random().Next(min, max + 1);
+        result[i] = new Random().Next(min, max);
     }
     return result;
 }
 
-int[] GetArrayRes(int[] inArray)
+int DiffMaxMin(int[] inArray)
 {
-
-    int k = inArray.Length / 2;
-
-    if (inArray.Length % 2 == 1) k++;
-    int[] result1 = new int[k];
-
-    for (int j = 0; j < inArray.Length / 2; j++)
+    int max = inArray[0];
+    int min = inArray[0];
+    for (int i = 1; i < inArray.Length; i++)
     {
-        result1[j] = inArray[j] * inArray[inArray.Length - j - 1];
-
+        if (inArray[i] > max)
+        {
+            max = inArray[i];
+        }
+        if (inArray[i] < min)
+        {
+            min = inArray[i];
+        }
     }
-    if (inArray.Length % 2 == 1) result1[k - 1] = inArray[inArray.Length / 2];
-
-    return result1;
+    int diff = max - min;
+    return diff;
 }
