@@ -12,7 +12,8 @@
 // double result = CalculateFormula(1, 2, 3, 4);
 // Console.WriteLine(result);
 
-// task 24
+// task 24  Напишите метод, который принимает на вход число
+// и выдаёт сумму от 1 до А
 using System;
 using static System.Console;
 
@@ -32,7 +33,8 @@ using static System.Console;
 //     return sum;
 // }
 
-// task 26
+// task 26 Напишите метод, кот. принимает на вход число
+// и выдаёт к-во цифр в числе.
 // Clear();
 // Write("Введите число а: ");
 // WriteLine($"Количество цифр в числе = {GetLenNumbers(int.Parse(ReadLine()))}");
@@ -50,7 +52,8 @@ using static System.Console;
 //     return len;
 // }
 
-// task 28
+// task 28 Напишите метод, кот. принимает на вход число
+// и выдаёт произведение чисел от 1 до Н.
 // Clear();
 // Write("Введите число а: ");
 // WriteLine($"Факториал числа = {GetFactorial(int.Parse(ReadLine()))}");
@@ -65,7 +68,8 @@ using static System.Console;
 //     return factor;
 // }
 
-// task 30
+// task 30 Напишите метод, выводящий массив из 8 эл-тов
+// заполненый в случайном порядке 0 и 1.
 // Clear();
 
 // int[] arr = new int[8];
@@ -89,7 +93,8 @@ using static System.Console;
 //     return result;
 // }
 
-// task 25_DZ
+// task 25_DZ Напишите цикл, который принимает на вход лисла А и В
+//  и возводит А в степень В
 // Clear();
 // Write("Введите число a: ");
 // int a = int.Parse(ReadLine());
@@ -112,7 +117,8 @@ using static System.Console;
 //     return res;
 // }
 
-// task 27_DZ
+// task 27_DZ Напишите метод, кот. принимает число
+// и выдаёт сумму цифр в нём.
 // Clear();
 // Write("Введите число a: ");
 // WriteLine($"Сумма цифр в числе = {GetSumNumbers(int.Parse(ReadLine()))}");
@@ -128,7 +134,8 @@ using static System.Console;
 //     return sum;
 // }
 
-// task 29_DZ
+// task 29_DZ Напишите метод, кот. задаёт массив из 8 элементов
+// и выводит на экран
 // Clear();
 
 // WriteLine($"[{String.Join(",", GetArray(8))}]");
@@ -142,7 +149,8 @@ using static System.Console;
 //     return result;
 // }
 
-// task 31
+// task 31 Задать массив из 12 эл-тов из случайных чсел от -9 до 9
+// Найти сумму отр. и положит. эл-тов массива.
 // Clear();
 // int[] array = GetArray(12, -9, 9);
 // WriteLine(String.Join("," , array));
@@ -173,7 +181,8 @@ using static System.Console;
 //     return result;
 // }
 
-// task 32
+// task 32 Написать программу замены элементов массива
+// положит. на отрицат. и наоборот.
 // Clear();
 // int[] array = GetArray(8, -10, 10);
 // WriteLine(String.Join(" " , array));
@@ -206,7 +215,8 @@ using static System.Console;
 //     }
 // }
 
-// task 33
+// task 33 Задайте массив Напишите метод, кот. определяет 
+// есть ли заданное число в массиве
 // Clear();
 // WriteLine("Введите через пробел массив: ");
 // int [] array = GetArrayFromString(ReadLine());
@@ -242,7 +252,8 @@ using static System.Console;
 //     return false;
 // }
 
-// task 35
+// task 35 Задать одномерный массив из 123 случайных чисел
+// найти к-во ел-тов, лежащих в интервале 10  99
 // Clear();
 // int[] array = GetArray(10, 0, 1000);
 // WriteLine(String.Join(",", array));
@@ -281,7 +292,8 @@ using static System.Console;
 //     return count;
 // }
 
-// task 37
+// task 37 Найти произведение пар чисел в массиве (первый - последний)
+// (второй - предпоследний). Результат вывести в новом массиве.
 // Clear();
 // int[] array = GetArray(4, 0, 10);
 // WriteLine(String.Join(",", array));
